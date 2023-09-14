@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ModalViewController: UIViewController {
 
@@ -18,7 +19,9 @@ class ModalViewController: UIViewController {
 
     @IBAction func openLink(_ sender: Any) {
         if let url = URL(string: "https://www.google.com") {
-            UIApplication.shared.open(url)
+            //UIApplication.shared.open(url)
+            let safariVC: SFSafariViewController = SFSafariViewController(url: url)
+            self.present(safariVC, animated: true, completion: nil)
         }
     }
     
